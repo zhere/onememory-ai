@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="700" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 渐变定义 -->
+    <linearGradient id="memoryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <linearGradient id="ragGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#0891B2;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <linearGradient id="fusionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#DC2626;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#EA580C;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <!-- 箭头标记 -->
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" 
+            refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#374151"/>
+    </marker>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1000" height="700" fill="#F9FAFB"/>
+  
+  <!-- 标题 -->
+  <text x="500" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F2937">
+    Supermemory + RAG 架构图
+  </text>
+  
+  <!-- 客户端层 -->
+  <rect x="50" y="60" width="900" height="50" rx="6" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1"/>
+  <text x="500" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#374151">
+    客户端层 (Web App, Mobile, API Clients)
+  </text>
+  
+  <!-- API网关 -->
+  <rect x="50" y="140" width="900" height="50" rx="6" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1"/>
+  <text x="500" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E40AF">
+    API网关层 (Auth, Rate Limit, Routing)
+  </text>
+  
+  <!-- 核心服务层 -->
+  <g id="core-services">
+    <!-- 记忆管理服务 -->
+    <rect x="50" y="230" width="200" height="100" rx="8" fill="url(#memoryGradient)"/>
+    <text x="150" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+      记忆管理服务
+    </text>
+    <text x="150" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">MemoryManager</text>
+    <text x="150" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">ContextOptimizer</text>
+    <text x="150" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">PrioritySorter</text>
+    
+    <!-- RAG知识管理 -->
+    <rect x="280" y="230" width="200" height="100" rx="8" fill="url(#ragGradient)"/>
+    <text x="380" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+      RAG知识管理
+    </text>
+    <text x="380" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">RAGKnowledgeManager</text>
+    <text x="380" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">EmbeddingService</text>
+    <text x="380" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">VectorDatabase</text>
+    
+    <!-- 融合服务 -->
+    <rect x="510" y="230" width="200" height="100" rx="8" fill="url(#fusionGradient)"/>
+    <text x="610" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+      融合服务层
+    </text>
+    <text x="610" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">EnhancedChatService</text>
+    <text x="610" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">TokenCounter</text>
+    <text x="610" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">LLMAdapter</text>
+    
+    <!-- 时序知识图谱 -->
+    <rect x="740" y="230" width="210" height="100" rx="8" fill="#DDD6FE" stroke="#8B5CF6" stroke-width="2"/>
+    <text x="845" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#5B21B6">
+      时序知识图谱
+    </text>
+    <text x="845" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#7C3AED">ZepGraphitiManager</text>
+    <text x="845" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#7C3AED">TemporalEntities</text>
+    <text x="845" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#7C3AED">RelationInference</text>
+  </g>
+  
+  <!-- 数据存储层 -->
+  <g id="data-layer">
+    <!-- 向量数据库 -->
+    <rect x="50" y="370" width="150" height="60" rx="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1"/>
+    <text x="125" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#312E81">向量数据库</text>
+    <text x="125" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3730A3">Pinecone</text>
+    <text x="125" y="422" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3730A3">pgvector</text>
+    
+    <!-- 关系数据库 -->
+    <rect x="220" y="370" width="150" height="60" rx="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1"/>
+    <text x="295" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#312E81">关系数据库</text>
+    <text x="295" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3730A3">PostgreSQL</text>
+    <text x="295" y="422" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3730A3">MySQL</text>
+    
+    <!-- 缓存层 -->
+    <rect x="390" y="370" width="150" height="60" rx="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1"/>
+    <text x="465" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#312E81">缓存层</text>
+    <text x="465" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3730A3">Redis</text>
+    <text x="465" y="422" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3730A3">Memcached</text>
+    
+    <!-- 图数据库 -->
+    <rect x="560" y="370" width="150" height="60" rx="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1"/>
+    <text x="635" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#312E81">图数据库</text>
+    <text x="635" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3730A3">Neo4j</text>
+    <text x="635" y="422" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3730A3">JanusGraph</text>
+    
+    <!-- 外部知识源 -->
+    <rect x="730" y="370" width="220" height="60" rx="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1"/>
+    <text x="840" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#312E81">外部知识源</text>
+    <text x="840" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3730A3">Elasticsearch, API接口, 文件系统</text>
+    <text x="840" y="422" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3730A3">数据库, 网页抓取</text>
+  </g>
+  
+  <!-- 连接线 -->
+  <!-- 客户端到API网关 -->
+  <line x1="500" y1="110" x2="500" y2="140" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- API网关到核心服务 -->
+  <line x1="500" y1="190" x2="500" y2="230" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 核心服务到数据层 -->
+  <line x1="150" y1="330" x2="125" y2="370" stroke="#6B7280" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <line x1="380" y1="330" x2="295" y2="370" stroke="#6B7280" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <line x1="610" y1="330" x2="465" y2="370" stroke="#6B7280" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <line x1="845" y1="330" x2="635" y2="370" stroke="#6B7280" stroke-width="1" marker-end="url(#arrowhead)"/>
+  
+  <!-- 融合服务与其他服务的连接 -->
+  <line x1="610" y1="250" x2="270" y2="250" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="610" y1="270" x2="500" y2="270" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="610" y1="290" x2="845" y2="280" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+  
+  <!-- 流程说明 -->
+  <g id="flow-explanation">
+    <text x="500" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1F2937">
+      数据流程说明
+    </text>
+    
+    <text x="50" y="510" font-family="Arial, sans-serif" font-size="11" fill="#374151">
+      1. 用户请求 → API网关进行认证和路由
+    </text>
+    
+    <text x="50" y="530" font-family="Arial, sans-serif" font-size="11" fill="#374151">
+      2. 并行检索：记忆管理服务搜索历史记忆 + RAG服务搜索外部知识
+    </text>
+    
+    <text x="50" y="550" font-family="Arial, sans-serif" font-size="11" fill="#374151">
+      3. 融合服务层使用加权/排名/混合策略整合结果
+    </text>
+    
+    <text x="50" y="570" font-family="Arial, sans-serif" font-size="11" fill="#374151">
+      4. 时序知识图谱提供时间关系和实体链接
+    </text>
+    
+    <text x="50" y="590" font-family="Arial, sans-serif" font-size="11" fill="#374151">
+      5. 优化后的上下文发送给LLM生成响应
+    </text>
+    
+    <text x="50" y="610" font-family="Arial, sans-serif" font-size="11" fill="#374151">
+      6. 新对话存储到记忆系统，更新知识图谱
+    </text>
+  </g>
+  
+  <!-- 图例 -->
+  <g id="legend" transform="translate(50, 650)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#374151">图例:</text>
+    
+    <rect x="50" y="-8" width="12" height="8" rx="1" fill="url(#memoryGradient)"/>
+    <text x="70" y="-1" font-family="Arial, sans-serif" font-size="9" fill="#374151">记忆功能</text>
+    
+    <rect x="130" y="-8" width="12" height="8" rx="1" fill="url(#ragGradient)"/>
+    <text x="150" y="-1" font-family="Arial, sans-serif" font-size="9" fill="#374151">RAG功能</text>
+    
+    <rect x="200" y="-8" width="12" height="8" rx="1" fill="url(#fusionGradient)"/>
+    <text x="220" y="-1" font-family="Arial, sans-serif" font-size="9" fill="#374151">融合层</text>
+    
+    <line x1="280" y1="-4" x2="295" y2="-4" stroke="#6B7280" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <text x="300" y="-1" font-family="Arial, sans-serif" font-size="9" fill="#374151">数据流</text>
+    
+    <line x1="350" y1="-4" x2="365" y2="-4" stroke="#DC2626" stroke-width="1" stroke-dasharray="2,1"/>
+    <text x="370" y="-1" font-family="Arial, sans-serif" font-size="9" fill="#374151">服务调用</text>
+  </g>
+</svg>
