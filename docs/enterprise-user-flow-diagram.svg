@@ -1,0 +1,366 @@
+<svg width="1200" height="1700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2c3e50; }
+      .stage-title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #34495e; }
+      .step-text { font-family: Arial, sans-serif; font-size: 14px; fill: #2c3e50; }
+      .small-text { font-family: Arial, sans-serif; font-size: 12px; fill: #7f8c8d; }
+      .stage-box { fill: #ecf0f1; stroke: #bdc3c7; stroke-width: 2; rx: 10; }
+      .step-box { fill: #ffffff; stroke: #3498db; stroke-width: 2; rx: 5; }
+      .project-box { fill: #e8f5e8; stroke: #27ae60; stroke-width: 2; rx: 5; }
+      .memory-box { fill: #fff3cd; stroke: #ffc107; stroke-width: 2; rx: 5; }
+      .graph-box { fill: #e1ecf4; stroke: #6f42c1; stroke-width: 2; rx: 5; }
+      .analysis-box { fill: #f8d7da; stroke: #dc3545; stroke-width: 2; rx: 5; }
+      .arrow { stroke: #34495e; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .connection-line { stroke: #7f8c8d; stroke-width: 1; stroke-dasharray: 3,3; fill: none; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e" />
+    </marker>
+  </defs>
+
+  <!-- 标题 -->
+  <text x="600" y="30" text-anchor="middle" class="title">Supermemory企业用户使用流程图（功能限制版本）</text>
+  
+  <!-- 第一阶段：系统初始化 -->
+  <rect x="50" y="60" width="1100" height="200" class="phase-box"/>
+  <text x="70" y="85" class="phase-title">第一阶段：系统初始化与配置</text>
+  <text x="950" y="85" class="role-text">(系统管理员)</text>
+  
+  <!-- 系统访问 -->
+  <rect x="70" y="100" width="180" height="140" class="admin-box"/>
+  <text x="160" y="120" text-anchor="middle" class="step-title">1.1 系统访问</text>
+  <text x="80" y="140" class="step-text">• 访问系统仪表板</text>
+  <text x="80" y="155" class="step-text">• 查看系统概览</text>
+  <text x="80" y="170" class="step-text">• 确认模块状态</text>
+  <text x="80" y="185" class="step-text">• 健康检查</text>
+  <text x="80" y="200" class="step-text">• 初始化验证</text>
+  <text x="80" y="220" class="step-text">URL: localhost:5173</text>
+  
+  <!-- 基础配置 -->
+  <rect x="270" y="100" width="180" height="140" class="admin-box"/>
+  <text x="360" y="120" text-anchor="middle" class="step-title">1.2 基础配置</text>
+  <text x="280" y="140" class="step-text">• API密钥配置</text>
+  <text x="280" y="155" class="step-text">• 代理服务器设置</text>
+  <text x="280" y="170" class="step-text">• 数据库连接</text>
+  <text x="280" y="185" class="step-text">• 安全策略</text>
+  <text x="280" y="200" class="step-text">• 缓存配置</text>
+  <text x="280" y="220" class="step-text">页面: 系统设置</text>
+  
+  <!-- Token管理 -->
+  <rect x="470" y="100" width="180" height="140" class="admin-box"/>
+  <text x="560" y="120" text-anchor="middle" class="step-title">1.3 Token管理</text>
+  <text x="480" y="140" class="step-text">• API Token生成</text>
+  <text x="480" y="155" class="step-text">• 使用配额设置</text>
+  <text x="480" y="170" class="step-text">• 权限级别配置</text>
+  <text x="480" y="185" class="step-text">• 监控统计</text>
+  <text x="480" y="200" class="step-text">• 安全审计</text>
+  <text x="480" y="220" class="step-text">页面: Token管理</text>
+  
+  <!-- 配置验证 -->
+  <rect x="670" y="100" width="180" height="140" class="admin-box"/>
+  <text x="760" y="120" text-anchor="middle" class="step-title">1.4 配置验证</text>
+  <text x="680" y="140" class="step-text">• 连接测试</text>
+  <text x="680" y="155" class="step-text">• 功能验证</text>
+  <text x="680" y="170" class="step-text">• 性能测试</text>
+  <text x="680" y="185" class="step-text">• 安全检查</text>
+  <text x="680" y="200" class="step-text">• 备份设置</text>
+  <text x="680" y="220" class="step-text">页面: 系统监控</text>
+  
+  <!-- 箭头连接 -->
+  <line x1="250" y1="170" x2="270" y2="170" class="arrow"/>
+  <line x1="450" y1="170" x2="470" y2="170" class="arrow"/>
+  <line x1="650" y1="170" x2="670" y2="170" class="arrow"/>
+  
+  <!-- 第二阶段：项目管理 -->
+  <rect x="50" y="280" width="1100" height="200" class="phase-box"/>
+  <text x="70" y="305" class="phase-title">第二阶段：项目创建与团队协作</text>
+  <text x="950" y="305" class="role-text">(项目经理)</text>
+  
+  <!-- 项目管理 -->
+  <rect x="70" y="320" width="200" height="140" class="manager-box"/>
+  <text x="170" y="340" text-anchor="middle" class="step-title">2.1 项目管理（基础功能）</text>
+  <text x="80" y="360" class="step-text">• 创建/编辑项目</text>
+  <text x="80" y="375" class="step-text">• 项目状态管理</text>
+  <text x="80" y="390" class="step-text">⚠️ 缺少团队管理</text>
+  <text x="80" y="405" class="step-text">⚠️ 缺少分类体系</text>
+  <text x="80" y="420" class="step-text">• 优先级定义</text>
+  <text x="80" y="440" class="step-text">页面: 项目管理</text>
+  
+  <!-- 团队配置 -->
+  <rect x="290" y="320" width="200" height="140" class="manager-box"/>
+  <text x="390" y="340" text-anchor="middle" class="step-title">2.2 团队配置</text>
+  <text x="300" y="360" class="step-text">• 成员分配</text>
+  <text x="300" y="375" class="step-text">• 角色权限</text>
+  <text x="300" y="390" class="step-text">• 协作规则</text>
+  <text x="300" y="405" class="step-text">• 通知设置</text>
+  <text x="300" y="420" class="step-text">• 工作流定义</text>
+  <text x="300" y="440" class="step-text">页面: 团队管理</text>
+  
+  <!-- 项目初始化 -->
+  <rect x="510" y="320" width="200" height="140" class="manager-box"/>
+  <text x="610" y="340" text-anchor="middle" class="step-title">2.3 项目初始化</text>
+  <text x="520" y="360" class="step-text">• 工作空间创建</text>
+  <text x="520" y="375" class="step-text">• 分类体系设置</text>
+  <text x="520" y="390" class="step-text">• 标签管理规则</text>
+  <text x="520" y="405" class="step-text">• 质量控制标准</text>
+  <text x="520" y="420" class="step-text">• 监控指标定义</text>
+  <text x="520" y="440" class="step-text">页面: 项目设置</text>
+  
+  <!-- 数据导入 -->
+  <rect x="730" y="320" width="200" height="140" class="manager-box"/>
+  <text x="830" y="340" text-anchor="middle" class="step-title">2.4 数据导入</text>
+  <text x="740" y="360" class="step-text">• 初始数据源</text>
+  <text x="740" y="375" class="step-text">• 批量导入</text>
+  <text x="740" y="390" class="step-text">• 数据验证</text>
+  <text x="740" y="405" class="step-text">• 格式转换</text>
+  <text x="740" y="420" class="step-text">• 质量检查</text>
+  <text x="740" y="440" class="step-text">页面: 数据导入</text>
+  
+  <!-- 箭头连接 -->
+  <line x1="270" y1="390" x2="290" y2="390" class="arrow"/>
+  <line x1="490" y1="390" x2="510" y2="390" class="arrow"/>
+  <line x1="710" y1="390" x2="730" y2="390" class="arrow"/>
+  
+  <!-- 阶段间连接 -->
+  <line x1="600" y1="260" x2="600" y2="280" class="flow-arrow"/>
+  
+  <!-- 第三阶段：知识管理 -->
+  <rect x="50" y="500" width="1100" height="200" class="phase-box"/>
+  <text x="70" y="525" class="phase-title">第三阶段：知识内容管理</text>
+  <text x="950" y="525" class="role-text">(知识工作者)</text>
+  
+  <!-- 记忆管理 -->
+  <rect x="70" y="540" width="200" height="140" class="memory-box"/>
+  <text x="170" y="560" text-anchor="middle" class="step-title">3.1 记忆管理（查看模式）</text>
+  <text x="80" y="580" class="step-text">• 查看记忆列表</text>
+  <text x="80" y="595" class="step-text">• 搜索和筛选</text>
+  <text x="80" y="610" class="step-text">• 删除/导出记忆</text>
+  <text x="80" y="625" class="step-text">⚠️ 导入按钮无功能</text>
+  <text x="80" y="640" class="step-text">⚠️ 无法上传文档</text>
+  <text x="80" y="660" class="step-text">页面: 记忆管理</text>
+  
+  <!-- 内容处理 -->
+  <rect x="290" y="540" width="200" height="140" class="worker-box"/>
+  <text x="390" y="560" text-anchor="middle" class="step-title">3.2 内容处理</text>
+  <text x="300" y="580" class="step-text">• 关键词提取</text>
+  <text x="300" y="595" class="step-text">• 语义向量化</text>
+  <text x="300" y="610" class="step-text">• 质量评估</text>
+  <text x="300" y="625" class="step-text">• 标签分类</text>
+  <text x="300" y="640" class="step-text">• 元数据管理</text>
+  <text x="300" y="660" class="step-text">自动处理</text>
+  
+  <!-- 知识图谱查看 -->
+  <rect x="510" y="540" width="200" height="140" class="graph-box"/>
+  <text x="610" y="560" text-anchor="middle" class="step-title">3.3 知识图谱查看</text>
+  <text x="520" y="580" class="step-text">• 图谱总览</text>
+  <text x="520" y="595" class="step-text">• 时序实体浏览</text>
+  <text x="520" y="610" class="step-text">• 关系推理查看</text>
+  <text x="520" y="625" class="step-text">• 记忆合成展示</text>
+  <text x="520" y="640" class="step-text">• 基础统计信息</text>
+  <text x="520" y="660" class="step-text">页面: 知识图谱</text>
+  
+  <!-- 内容管理 -->
+  <rect x="730" y="540" width="200" height="140" class="worker-box"/>
+  <text x="830" y="560" text-anchor="middle" class="step-title">3.4 内容管理</text>
+  <text x="740" y="580" class="step-text">• 版本控制</text>
+  <text x="740" y="595" class="step-text">• 更新维护</text>
+  <text x="740" y="610" class="step-text">• 质量监控</text>
+  <text x="740" y="625" class="step-text">• 生命周期管理</text>
+  <text x="740" y="640" class="step-text">• 归档删除</text>
+  <text x="740" y="660" class="step-text">页面: 内容管理</text>
+  
+  <!-- 箭头连接 -->
+  <line x1="270" y1="610" x2="290" y2="610" class="arrow"/>
+  <line x1="490" y1="610" x2="510" y2="610" class="arrow"/>
+  <line x1="710" y1="610" x2="730" y2="610" class="arrow"/>
+  
+  <!-- 阶段间连接 -->
+  <line x1="600" y1="480" x2="600" y2="500" class="flow-arrow"/>
+  
+  <!-- 第四阶段：知识图谱 -->
+  <rect x="50" y="720" width="1100" height="200" class="phase-box"/>
+  <text x="70" y="745" class="phase-title">第四阶段：知识图谱构建与分析</text>
+  <text x="950" y="745" class="role-text">(知识工作者 + 数据分析师)</text>
+  
+  <!-- 图谱构建 -->
+  <rect x="70" y="760" width="200" height="140" class="worker-box"/>
+  <text x="170" y="780" text-anchor="middle" class="step-title">4.1 图谱构建</text>
+  <text x="80" y="800" class="step-text">• 实体识别</text>
+  <text x="80" y="815" class="step-text">• 关系抽取</text>
+  <text x="80" y="830" class="step-text">• 图谱生成</text>
+  <text x="80" y="845" class="step-text">• 质量验证</text>
+  <text x="80" y="860" class="step-text">• 增量更新</text>
+  <text x="80" y="880" class="step-text">页面: 知识图谱</text>
+  
+  <!-- 可视化分析 -->
+  <rect x="290" y="760" width="200" height="140" class="analyst-box"/>
+  <text x="390" y="780" text-anchor="middle" class="step-title">4.2 可视化分析</text>
+  <text x="300" y="800" class="step-text">• 交互式浏览</text>
+  <text x="300" y="815" class="step-text">• 节点详情查看</text>
+  <text x="300" y="830" class="step-text">• 关系路径追踪</text>
+  <text x="300" y="845" class="step-text">• 子图筛选</text>
+  <text x="300" y="860" class="step-text">• 层级展开</text>
+  <text x="300" y="880" class="step-text">页面: 图谱浏览</text>
+  
+  <!-- 时序分析 -->
+  <rect x="510" y="760" width="200" height="140" class="analyst-box"/>
+  <text x="610" y="780" text-anchor="middle" class="step-title">4.3 时序分析</text>
+  <text x="520" y="800" class="step-text">• 实体生命周期</text>
+  <text x="520" y="815" class="step-text">• 时间序列分析</text>
+  <text x="520" y="830" class="step-text">• 趋势识别</text>
+  <text x="520" y="845" class="step-text">• 周期性发现</text>
+  <text x="520" y="860" class="step-text">• 异常检测</text>
+  <text x="520" y="880" class="step-text">页面: 时序实体</text>
+  
+  <!-- 图谱分析 -->
+  <rect x="730" y="760" width="200" height="140" class="analyst-box"/>
+  <text x="830" y="780" text-anchor="middle" class="step-title">4.4 图谱分析</text>
+  <text x="740" y="800" class="step-text">• 中心性分析</text>
+  <text x="740" y="815" class="step-text">• 社区发现</text>
+  <text x="740" y="830" class="step-text">• 路径分析</text>
+  <text x="740" y="845" class="step-text">• 影响力评估</text>
+  <text x="740" y="860" class="step-text">• 结构优化</text>
+  <text x="740" y="880" class="step-text">页面: 图谱分析</text>
+  
+  <!-- 箭头连接 -->
+  <line x1="270" y1="830" x2="290" y2="830" class="arrow"/>
+  <line x1="490" y1="830" x2="510" y2="830" class="arrow"/>
+  <line x1="710" y1="830" x2="730" y2="830" class="arrow"/>
+  
+  <!-- 阶段间连接 -->
+  <line x1="600" y1="700" x2="600" y2="720" class="flow-arrow"/>
+  
+  <!-- 第五阶段：高级分析 -->
+  <rect x="50" y="940" width="1100" height="200" class="phase-box"/>
+  <text x="70" y="965" class="phase-title">第五阶段：高级分析与洞察</text>
+  <text x="950" y="965" class="role-text">(数据分析师)</text>
+  
+  <!-- 关系推理 -->
+  <rect x="70" y="980" width="250" height="140" class="analyst-box"/>
+  <text x="195" y="1000" text-anchor="middle" class="step-title">5.1 关系推理</text>
+  <text x="80" y="1020" class="step-text">• 推理任务创建</text>
+  <text x="80" y="1035" class="step-text">• 推理目标定义</text>
+  <text x="80" y="1050" class="step-text">• 算法配置</text>
+  <text x="80" y="1065" class="step-text">• 新关系发现</text>
+  <text x="80" y="1080" class="step-text">• 置信度评估</text>
+  <text x="80" y="1100" class="step-text">页面: 关系推理</text>
+  
+  <!-- 记忆合成 -->
+  <rect x="340" y="980" width="250" height="140" class="analyst-box"/>
+  <text x="465" y="1000" text-anchor="middle" class="step-title">5.2 记忆合成</text>
+  <text x="350" y="1020" class="step-text">• 跨会话整合</text>
+  <text x="350" y="1035" class="step-text">• 内容去重</text>
+  <text x="350" y="1050" class="step-text">• 信息融合</text>
+  <text x="350" y="1065" class="step-text">• 知识提炼</text>
+  <text x="350" y="1080" class="step-text">• 洞察产出</text>
+  <text x="350" y="1100" class="step-text">页面: 记忆合成</text>
+  
+  <!-- 智能分析 -->
+  <rect x="610" y="980" width="250" height="140" class="analyst-box"/>
+  <text x="735" y="1000" text-anchor="middle" class="step-title">5.3 智能分析</text>
+  <text x="620" y="1020" class="step-text">• 模式识别</text>
+  <text x="620" y="1035" class="step-text">• 趋势预测</text>
+  <text x="620" y="1050" class="step-text">• 异常发现</text>
+  <text x="620" y="1065" class="step-text">• 业务洞察</text>
+  <text x="620" y="1080" class="step-text">• 决策支持</text>
+  <text x="620" y="1100" class="step-text">页面: 数据分析</text>
+  
+  <!-- 箭头连接 -->
+  <line x1="320" y1="1050" x2="340" y2="1050" class="arrow"/>
+  <line x1="590" y1="1050" x2="610" y2="1050" class="arrow"/>
+  
+  <!-- 阶段间连接 -->
+  <line x1="600" y1="920" x2="600" y2="940" class="flow-arrow"/>
+  
+  <!-- 第六阶段：监控优化 -->
+  <rect x="50" y="1160" width="1100" height="200" class="phase-box"/>
+  <text x="70" y="1185" class="phase-title">第六阶段：系统监控与优化</text>
+  <text x="950" y="1185" class="role-text">(系统管理员 + 数据分析师)</text>
+  
+  <!-- 性能监控 -->
+  <rect x="70" y="1200" width="200" height="140" class="admin-box"/>
+  <text x="170" y="1220" text-anchor="middle" class="step-title">6.1 性能监控</text>
+  <text x="80" y="1240" class="step-text">• 系统性能指标</text>
+  <text x="80" y="1255" class="step-text">• 响应时间监控</text>
+  <text x="80" y="1270" class="step-text">• 资源使用率</text>
+  <text x="80" y="1285" class="step-text">• 错误率统计</text>
+  <text x="80" y="1300" class="step-text">• 告警机制</text>
+  <text x="80" y="1320" class="step-text">页面: 系统监控</text>
+  
+  <!-- 使用分析 -->
+  <rect x="290" y="1200" width="200" height="140" class="analyst-box"/>
+  <text x="390" y="1220" text-anchor="middle" class="step-title">6.2 使用分析</text>
+  <text x="300" y="1240" class="step-text">• 用户行为分析</text>
+  <text x="300" y="1255" class="step-text">• 功能使用统计</text>
+  <text x="300" y="1270" class="step-text">• 内容增长趋势</text>
+  <text x="300" y="1285" class="step-text">• 效率提升指标</text>
+  <text x="300" y="1300" class="step-text">• ROI计算</text>
+  <text x="300" y="1320" class="step-text">页面: 数据分析</text>
+  
+  <!-- 质量评估 -->
+  <rect x="510" y="1200" width="200" height="140" class="analyst-box"/>
+  <text x="610" y="1220" text-anchor="middle" class="step-title">6.3 质量评估</text>
+  <text x="520" y="1240" class="step-text">• 内容质量评分</text>
+  <text x="520" y="1255" class="step-text">• 准确性检查</text>
+  <text x="520" y="1270" class="step-text">• 时效性验证</text>
+  <text x="520" y="1285" class="step-text">• 相关性分析</text>
+  <text x="520" y="1300" class="step-text">• 改进建议</text>
+  <text x="520" y="1320" class="step-text">页面: 质量管理</text>
+  
+  <!-- 系统优化 -->
+  <rect x="730" y="1200" width="200" height="140" class="admin-box"/>
+  <text x="830" y="1220" text-anchor="middle" class="step-title">6.4 系统优化</text>
+  <text x="740" y="1240" class="step-text">• 参数调优</text>
+  <text x="740" y="1255" class="step-text">• 功能增强</text>
+  <text x="740" y="1270" class="step-text">• 安全加固</text>
+  <text x="740" y="1285" class="step-text">• 备份策略</text>
+  <text x="740" y="1300" class="step-text">• 扩展规划</text>
+  <text x="740" y="1320" class="step-text">页面: 系统优化</text>
+  
+  <!-- 箭头连接 -->
+  <line x1="270" y1="1270" x2="290" y2="1270" class="arrow"/>
+  <line x1="490" y1="1270" x2="510" y2="1270" class="arrow"/>
+  <line x1="710" y1="1270" x2="730" y2="1270" class="arrow"/>
+  
+  <!-- 阶段间连接 -->
+  <line x1="600" y1="1140" x2="600" y2="1160" class="flow-arrow"/>
+  
+  <!-- 持续改进循环箭头 -->
+  <path d="M 950 1270 Q 1050 1270 1050 1170 Q 1050 100 950 100" stroke="#e74c3c" stroke-width="3" fill="none" stroke-dasharray="5,5" marker-end="url(#redarrowhead)"/>
+  <text x="1060" y="680" class="step-text" fill="#e74c3c">持续改进循环</text>
+  
+  <marker id="redarrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c" />
+  </marker>
+  
+  <!-- 功能限制说明 -->
+  <rect x="50" y="1380" width="1100" height="120" fill="#fff3cd" stroke="#ffc107" stroke-width="2"/>
+  <text x="600" y="1400" text-anchor="middle" class="phase-title">⚠️ 重要功能限制说明</text>
+  <text x="70" y="1420" class="step-text">• 项目管理：缺少团队管理、工作空间创建、分类体系设置、标签管理规则、质量控制标准、监控指标定义</text>
+  <text x="70" y="1435" class="step-text">• 数据导入：记忆管理页面的导入按钮没有实际功能实现，无法上传文档或批量导入数据</text>
+  <text x="70" y="1450" class="step-text">• 知识图谱：主要为查看模式，缺少深度分析和自动推理功能</text>
+  <text x="70" y="1465" class="step-text">• 整体限制：大部分功能只有前端界面，缺少完整的后端实现和数据持久化</text>
+  <text x="70" y="1480" class="step-text">• 适用场景：当前版本适合演示、原型验证和开发测试，不适合生产环境使用</text>
+  
+  <!-- 底部说明 -->
+  <rect x="50" y="1520" width="1100" height="180" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" rx="5"/>
+  <text x="70" y="1545" class="phase-title">关键成功因素与预期收益</text>
+  
+  <!-- 成功因素 -->
+  <text x="70" y="1430" class="step-title">关键成功因素:</text>
+  <text x="70" y="1450" class="step-text">• 数据质量管理：建立标准、清洗流程、监控机制</text>
+  <text x="70" y="1465" class="step-text">• 用户培训支持：系统培训、支持体系、反馈收集</text>
+  <text x="70" y="1480" class="step-text">• 安全合规：数据安全、合规要求、访问控制</text>
+  <text x="70" y="1495" class="step-text">• 持续优化：性能监控、使用分析、功能扩展</text>
+  
+  <!-- 预期收益 -->
+  <text x="600" y="1430" class="step-title">预期收益:</text>
+  <text x="600" y="1450" class="step-text">• 短期(1-3月)：检索效率↑50%，问题解决时间↓30%，培训周期↓20%</text>
+  <text x="600" y="1465" class="step-text">• 中期(3-12月)：知识复用率↑70%，决策准确性↑40%，协作效率↑35%</text>
+  <text x="600" y="1480" class="step-text">• 长期(12月+)：知识资产价值↑100%，创新能力显著增强</text>
+  <text x="600" y="1495" class="step-text">• 竞争优势：持续扩大，组织学习能力提升</text>
+  
+  <!-- 版本信息 -->
+  <text x="600" y="1540" text-anchor="middle" class="role-text">基于Supermemory系统v1.0 - 企业级智能记忆管理平台</text>
+</svg>

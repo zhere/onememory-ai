@@ -1,0 +1,38 @@
+[
+  {
+    "content": "用户询问关于React Hooks的使用方法，特别是useState和useEffect的最佳实践。讨论了组件生命周期和状态管理的相关问题。",
+    "summary": "React Hooks使用指南",
+    "tags": ["React", "Hooks", "前端开发", "状态管理"],
+    "project": "AI客服助手",
+    "createdAt": "2024-01-20T10:30:00Z",
+    "lastAccessed": "2024-01-20T14:20:00Z",
+    "accessCount": 5,
+    "relevanceScore": 0.88,
+    "type": "conversation",
+    "size": 256
+  },
+  {
+    "content": "技术文档：Vue.js 3.0的新特性介绍，包括Composition API、Teleport、Fragments等核心功能的详细说明和使用示例。",
+    "summary": "Vue.js 3.0新特性文档",
+    "tags": ["Vue.js", "前端框架", "Composition API", "技术文档"],
+    "project": "内容生成器",
+    "createdAt": "2024-01-19T09:15:00Z",
+    "lastAccessed": "2024-01-20T11:45:00Z",
+    "accessCount": 12,
+    "relevanceScore": 0.92,
+    "type": "document",
+    "size": 512
+  },
+  {
+    "content": "用户反馈：希望系统能够支持多语言切换功能，特别是中英文之间的切换。建议在用户设置中添加语言选择选项。",
+    "summary": "多语言支持需求反馈",
+    "tags": ["多语言", "国际化", "用户体验", "功能需求"],
+    "project": "数据分析平台",
+    "createdAt": "2024-01-18T16:45:00Z",
+    "lastAccessed": "2024-01-19T13:30:00Z",
+    "accessCount": 3,
+    "relevanceScore": 0.75,
+    "type": "context",
+    "size": 128
+  }
+]

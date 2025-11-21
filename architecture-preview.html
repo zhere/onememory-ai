@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermemory + RAG 架构图</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .diagram-section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #555;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .diagram-container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: white;
+        }
+        .description {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f8ff;
+            border-left: 4px solid #4F46E5;
+            border-radius: 4px;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .feature-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+        }
+        .feature-card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .memory { border-left: 4px solid #4F46E5; }
+        .rag { border-left: 4px solid #059669; }
+        .fusion { border-left: 4px solid #DC2626; }
+        .graph { border-left: 4px solid #8B5CF6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Supermemory + RAG 技术架构图</h1>
+        
+        <div class="diagram-section">
+            <h2>完整架构图</h2>
+            <div class="diagram-container">
+                <object data="memory-rag-architecture.svg" type="image/svg+xml" width="100%" height="600">
+                    <p>您的浏览器不支持SVG格式。请下载SVG文件查看：<a href="memory-rag-architecture.svg" download>下载架构图</a></p>
+                </object>
+            </div>
+            <div class="description">
+                <strong>完整架构图</strong>展示了系统的所有组件和层次结构，包括用户界面层、API网关层、核心服务层和数据存储层。
+            </div>
+        </div>
+        
+        <div class="diagram-section">
+            <h2>简化架构图</h2>
+            <div class="diagram-container">
+                <object data="memory-rag-architecture-simple.svg" type="image/svg+xml" width="100%" height="500">
+                    <p>您的浏览器不支持SVG格式。请下载SVG文件查看：<a href="memory-rag-architecture-simple.svg" download>下载简化架构图</a></p>
+                </object>
+            </div>
+            <div class="description">
+                <strong>简化架构图</strong>提供了更清晰的核心组件视图，便于理解主要功能模块和数据流程。
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card memory">
+                <h3>记忆功能 (Memory)</h3>
+                <ul>
+                    <li>长期记忆存储和检索</li>
+                    <li>上下文优化和优先级排序</li>
+                    <li>时间衰减和重要性评估</li>
+                    <li>跨会话记忆保持</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card rag">
+                <h3>RAG功能 (Retrieval-Augmented Generation)</h3>
+                <ul>
+                    <li>多源知识库集成</li>
+                    <li>向量化检索和相似度匹配</li>
+                    <li>外部API和数据源接入</li>
+                    <li>实时知识更新</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card fusion">
+                <h3>融合策略 (Fusion)</h3>
+                <ul>
+                    <li>加权融合算法</li>
+                    <li>排名合并策略</li>
+                    <li>混合智能排序</li>
+                    <li>上下文组装优化</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card graph">
+                <h3>时序知识图谱 (Temporal Knowledge Graph)</h3>
+                <ul>
+                    <li>时间感知的实体关系</li>
+                    <li>动态关系推理</li>
+                    <li>跨会话实体链接</li>
+                    <li>知识演化追踪</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="description">
+            <h3>系统特点</h3>
+            <ul>
+                <li><strong>双引擎架构：</strong>同时支持记忆检索和外部知识检索，提供更全面的上下文信息</li>
+                <li><strong>智能融合：</strong>采用多种融合策略，确保最优的检索结果组合</li>
+                <li><strong>时序感知：</strong>通过知识图谱记录时间关系，支持复杂的时序推理</li>
+                <li><strong>可扩展存储：</strong>支持多种数据存储后端，满足不同规模和性能需求</li>
+                <li><strong>模块化设计：</strong>各组件独立部署，便于维护和扩展</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
