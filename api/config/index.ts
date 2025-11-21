@@ -71,17 +71,17 @@ export interface ServerConfig {
 
 export const config: SystemConfig = {
   database: {
-    url: getEnvVar('DATABASE_URL', 'postgresql://username:password@localhost:5432/supermemory'),
-    maxConnections: parseInt(getEnvVar('DB_MAX_CONNECTIONS', '10')),
+    url: process.env.DATABASE_URL || 'postgresql://username:password@localhost:5432/supermemory',
+    maxConnections: parseInt(process.env.DB_MAX_CONNECTIONS || '10'),
   },
   redis: {
-    url: getEnvVar('REDIS_URL', 'redis://localhost:6379'),
-    ttl: parseInt(getEnvVar('CACHE_TTL', '3600')),
+    url: process.env.REDIS_URL || 'redis://localhost:6379',
+    ttl: parseInt(process.env.CACHE_TTL || '3600'),
   },
   pinecone: {
-    apiKey: getEnvVar('PINECONE_API_KEY', ''),
-    environment: getEnvVar('PINECONE_ENVIRONMENT', ''),
-    indexName: getEnvVar('PINECONE_INDEX_NAME', 'supermemory-vectors'),
+    apiKey: process.env.PINECONE_API_KEY || '',
+    environment: process.env.PINECONE_ENVIRONMENT || '',
+    indexName: process.env.PINECONE_INDEX_NAME || 'supermemory-vectors',
   },
   llm: {
     openaiApiKey: process.env.OPENAI_API_KEY,
@@ -89,42 +89,37 @@ export const config: SystemConfig = {
     googleApiKey: process.env.GOOGLE_API_KEY,
   },
   security: {
-    jwtSecret: getEnvVar('JWT_SECRET', 'supermemory_jwt_secret_key_development'),
-    jwtExpiresIn: getEnvVar('JWT_EXPIRES_IN', '7d'),
+    jwtSecret: process.env.JWT_SECRET || 'supermemory_jwt_secret_key_development',
+    jwtExpiresIn: process.env.JWT_EXPIRES_IN || '7d',
   },
   rateLimit: {
-    windowMs: parseInt(getEnvVar('RATE_LIMIT_WINDOW_MS', '900000')),
-    maxRequests: parseInt(getEnvVar('RATE_LIMIT_MAX_REQUESTS', '100')),
+    windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS || '900000'),
+    maxRequests: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS || '100'),
   },
   zep: {
-    apiKey: getEnvVar('ZEP_API_KEY', ''),
-    baseUrl: getEnvVar('ZEP_BASE_URL', 'https://api.getzep.com'),
-    timeout: parseInt(getEnvVar('ZEP_TIMEOUT', '30000')),
+    apiKey: process.env.ZEP_API_KEY || '',
+    baseUrl: process.env.ZEP_BASE_URL || 'https://api.getzep.com',
+    timeout: parseInt(process.env.ZEP_TIMEOUT || '30000'),
     projectId: process.env.ZEP_PROJECT_ID,
   },
 };
 
-// Helper function to safely get environment variables
-function getEnvVar(key: string, defaultValue: string): string {
-  return process.env[key] || defaultValue;
-}
-
 export const memoryConfig: MemoryConfig = {
-  defaultMaxChunkSize: parseInt(getEnvVar('DEFAULT_MAX_CHUNK_SIZE', '512')),
-  defaultOverlapSize: parseInt(getEnvVar('DEFAULT_OVERLAP_SIZE', '50')),
-  defaultSimilarityThreshold: parseFloat(getEnvVar('DEFAULT_SIMILARITY_THRESHOLD', '0.7')),
-  defaultMaxContextTokens: parseInt(getEnvVar('DEFAULT_MAX_CONTEXT_TOKENS', '4096')),
-  embeddingModel: getEnvVar('EMBEDDING_MODEL', 'text-embedding-3-small'),
-  embeddingDimensions: parseInt(getEnvVar('EMBEDDING_DIMENSIONS', '1536')),
-  memoryCacheSize: parseInt(getEnvVar('MEMORY_CACHE_SIZE', '1000')),
-  maxChunkSize: parseInt(getEnvVar('DEFAULT_MAX_CHUNK_SIZE', '512')),
-  overlapSize: parseInt(getEnvVar('DEFAULT_OVERLAP_SIZE', '50')),
+  defaultMaxChunkSize: parseInt(process.env.DEFAULT_MAX_CHUNK_SIZE || '512'),
+  defaultOverlapSize: parseInt(process.env.DEFAULT_OVERLAP_SIZE || '50'),
+  defaultSimilarityThreshold: parseFloat(process.env.DEFAULT_SIMILARITY_THRESHOLD || '0.7'),
+  defaultMaxContextTokens: parseInt(process.env.DEFAULT_MAX_CONTEXT_TOKENS || '4096'),
+  embeddingModel: process.env.EMBEDDING_MODEL || 'text-embedding-3-small',
+  embeddingDimensions: parseInt(process.env.EMBEDDING_DIMENSIONS || '1536'),
+  memoryCacheSize: parseInt(process.env.MEMORY_CACHE_SIZE || '1000'),
+  maxChunkSize: parseInt(process.env.DEFAULT_MAX_CHUNK_SIZE || '512'),
+  overlapSize: parseInt(process.env.DEFAULT_OVERLAP_SIZE || '50'),
 };
 
 export const serverConfig: ServerConfig = {
-  port: parseInt(getEnvVar('PORT', '3001')),
-  nodeEnv: getEnvVar('NODE_ENV', 'development'),
-  corsOrigin: getEnvVar('CORS_ORIGIN', 'http://localhost:5173'),
+  port: parseInt(process.env.PORT || '3001'),
+  nodeEnv: process.env.NODE_ENV || 'development',
+  corsOrigin: process.env.CORS_ORIGIN || 'http://localhost:5173',
 };
 
 // Validation function
@@ -135,7 +130,7 @@ export function validateConfig(): void {
     'JWT_SECRET',
   ];
 
-  const missingVars = requiredEnvVars.filter(varName => !getEnvVar(varName, ''));
+  const missingVars = requiredEnvVars.filter(varName => !(process.env[varName] || ''));
   
   if (missingVars.length > 0) {
     console.warn(`Warning: Missing environment variables: ${missingVars.join(', ')}`);
