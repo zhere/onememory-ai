@@ -34,7 +34,6 @@
     "ioredis": "^5.3.2",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.511.0",
-    "mermaid-cli": "^0.2.4",
     "openai": "^4.67.3",
     "pg": "^8.13.1",
     "react": "^18.3.1",
