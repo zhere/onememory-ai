@@ -11,9 +11,9 @@ import { ProxyServer } from './services/ProxyServer';
 import { authenticateApiKey, optionalAuth } from './middleware/auth';
 
 // Import API routes
-import memoriesRouter from './routes/memories';
-import projectsRouter from './routes/projects';
-import configRouter from './routes/config';
+import memoriesRouter from '../src/routes/memories';
+import projectsRouter from '../src/routes/projects';
+import configRouter from '../src/routes/config';
 
 // Validate configuration on startup
 validateConfig();
