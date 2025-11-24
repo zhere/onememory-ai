@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { authenticateApiKey } from '../middleware/auth';
-import { asyncHandler } from '../middleware/errorHandler';
-import { AppError } from '../middleware/errorHandler';
-import { DatabaseService } from '../services/DatabaseService';
+import { authenticateApiKey } from '../../api/middleware/auth';
+import { asyncHandler } from '../../api/middleware/errorHandler';
+import { AppError } from '../../api/middleware/errorHandler';
+import { DatabaseService } from '../../api/services/DatabaseService';
 
 const router = Router();
 const db = new DatabaseService();
