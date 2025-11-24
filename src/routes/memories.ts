@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { MemoryManager } from '../services/MemoryManager';
-import { authenticateApiKey, optionalAuth } from '../middleware/auth';
-import { asyncHandler } from '../middleware/errorHandler';
-import { AppError } from '../middleware/errorHandler';
+import { MemoryManager } from '../../api/services/MemoryManager';
+import { authenticateApiKey, optionalAuth } from '../../api/middleware/auth';
+import { asyncHandler } from '../../api/middleware/errorHandler';
+import { AppError } from '../../api/middleware/errorHandler';
 
 const router = Router();
 const memoryManager = new MemoryManager();

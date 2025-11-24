@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { authenticateApiKey, optionalAuth } from '../middleware/auth';
-import { asyncHandler } from '../middleware/errorHandler';
-import { AppError } from '../middleware/errorHandler';
-import { ConfigManager } from '../services/ConfigManager';
+import { authenticateApiKey, optionalAuth } from '../../api/middleware/auth';
+import { asyncHandler } from '../../api/middleware/errorHandler';
+import { AppError } from '../../api/middleware/errorHandler';
+import { ConfigManager } from '../../api/services/ConfigManager';
 
 const router = Router();
 const configManager = new ConfigManager();
