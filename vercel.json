@@ -43,5 +43,6 @@
       "src": "api/index.ts",
       "use": "@vercel/node"
     }
-  ]
+  ],
+  "ignore": ["api/server.ts", "api/config/**", "api/services/**", "api/middleware/**"]
 }
