@@ -14,9 +14,12 @@ import {
   GitBranch,
   Merge,
   ChevronDown,
-  ChevronRight
+  ChevronRight,
+  Search,
+  BookOpen
 } from "lucide-react";
 import { useState } from "react";
+import { useRAGStore } from "@/stores/rag-store";
 
 interface NavigationItem {
   name: string;
@@ -43,6 +46,13 @@ const navigationGroups: (NavigationItem | NavigationGroup)[] = [
       { name: "记忆合成", href: "/memory-synthesis", icon: Merge },
     ]
   },
+  {
+    name: "RAG功能",
+    items: [
+      { name: "知识源管理", href: "/rag-knowledge-sources", icon: BookOpen },
+      { name: "融合搜索", href: "/fusion-search-config", icon: Search },
+    ]
+  },
   { name: "分段配置", href: "/segmentation-config", icon: Scissors },
   { name: "Token管理", href: "/token-management", icon: Key },
   { name: "数据分析", href: "/analytics", icon: BarChart3 },
@@ -51,14 +61,19 @@ const navigationGroups: (NavigationItem | NavigationGroup)[] = [
 ];
 
 export default function Sidebar() {
-  const [expandedGroups, setExpandedGroups] = useState<string[]>(['知识图谱']);
+  const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set(["知识图谱", "RAG功能"]));
+  const { knowledgeSources, searchResults } = useRAGStore();
 
   const toggleGroup = (groupName: string) => {
-    setExpandedGroups(prev => 
-      prev.includes(groupName) 
-        ? prev.filter(name => name !== groupName)
-        : [...prev, groupName]
-    );
+    setExpandedGroups(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(groupName)) {
+        newSet.delete(groupName);
+      } else {
+        newSet.add(groupName);
+      }
+      return newSet;
+    });
   };
 
   const isGroup = (item: NavigationItem | NavigationGroup): item is NavigationGroup => {
@@ -82,7 +97,7 @@ export default function Sidebar() {
           <nav className="flex-1 px-2 pb-4 space-y-1">
             {navigationGroups.map((item) => {
               if (isGroup(item)) {
-                const isExpanded = expandedGroups.includes(item.name);
+                const isExpanded = expandedGroups.has(item.name);
                 return (
                   <div key={item.name}>
                     <button
@@ -94,8 +109,27 @@ export default function Sidebar() {
                       ) : (
                         <ChevronRight className="mr-3 flex-shrink-0 h-4 w-4" />
                       )}
-                      <Network className="mr-2 flex-shrink-0 h-5 w-5" />
-                      {item.name}
+                      {item.name === "知识图谱" ? (
+                        <Network className="mr-2 flex-shrink-0 h-5 w-5" />
+                      ) : item.name === "RAG功能" ? (
+                        <Search className="mr-2 flex-shrink-0 h-5 w-5" />
+                      ) : (
+                        <Network className="mr-2 flex-shrink-0 h-5 w-5" />
+                      )}
+                      <span className="flex-1 text-left">{item.name}</span>
+                      {/* RAG功能组显示统计信息 */}
+                      {item.name === "RAG功能" && (
+                        <div className="flex space-x-1">
+                          <span className="bg-blue-100 text-blue-800 text-xs px-1.5 py-0.5 rounded-full">
+                            {knowledgeSources.length}
+                          </span>
+                          {searchResults.length > 0 && (
+                            <span className="bg-green-100 text-green-800 text-xs px-1.5 py-0.5 rounded-full">
+                              {searchResults.length}
+                            </span>
+                          )}
+                        </div>
+                      )}
                     </button>
                     {isExpanded && (
                       <div className="ml-6 mt-1 space-y-1">
