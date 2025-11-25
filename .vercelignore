@@ -1,6 +1,47 @@
+# Dependencies
 node_modules
+
+# Git
 .git
+
+# IDE and editor files
 .trae
+.vscode
+.idea
+
+# Logs
+*.log
 .log
+
+# Design files
 .figma
+
+# API and backend files - completely ignore to prevent function detection
 api
+src/routes
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist
+build
+*.tsbuildinfo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp
+temp
+
+# Database
+*.sqlite
+*.db
+
+# Cache
+.cache
+.parcel-cache
