@@ -45,5 +45,5 @@
       "use": "@vercel/node"
     }
   ],
-  "ignore": ["api/**", "!api/index.ts"]
+  "ignore": ["api/**", "!api/index.ts", "src/routes/**", "src/**/*.ts"]
 }
