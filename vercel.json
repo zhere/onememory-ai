@@ -1,22 +1,12 @@
 {
   "version": 2,
-  "buildCommand": "npm run vercel-build",
+  "buildCommand": "npm run build",
   "installCommand": "npm install --legacy-peer-deps",
   "framework": "vite",
   "env": {
     "NODE_VERSION": "18"
   },
-  "functions": {
-    "api/index.ts": {
-      "maxDuration": 30,
-      "memory": 1024
-    }
-  },
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/index.ts"
-    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
@@ -24,26 +14,8 @@
   ],
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index.ts"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
-  ],
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
-        }
-      ]
-    }
-  ],
-  "builds": [
-    {
-      "src": "api/index.ts",
-      "use": "@vercel/node"
-    }
-  ],
-  "ignore": ["api/**", "!api/index.ts", "src/routes/**", "src/**/*.ts"]
+  ]
 }
