@@ -14,6 +14,8 @@ import KnowledgeGraph from "@/pages/KnowledgeGraph";
 import TemporalEntities from "@/pages/TemporalEntities";
 import RelationInference from "@/pages/RelationInference";
 import MemorySynthesis from "@/pages/MemorySynthesis";
+import RAGKnowledgeSources from "@/pages/RAGKnowledgeSources";
+import FusionSearchConfig from "@/pages/FusionSearchConfig";
 
 export default function App() {
   return (
@@ -35,6 +37,8 @@ export default function App() {
             <Route path="temporal-entities" element={<TemporalEntities />} />
             <Route path="relation-inference" element={<RelationInference />} />
             <Route path="memory-synthesis" element={<MemorySynthesis />} />
+            <Route path="rag-knowledge-sources" element={<RAGKnowledgeSources />} />
+            <Route path="fusion-search-config" element={<FusionSearchConfig />} />
           </Route>
         </Routes>
         <Toaster position="top-right" />
