@@ -27,3 +27,5 @@ dist-ssr
 # Node.js local installation
 node-v18.20.4-darwin-x64
 node-v18.20.5-darwin-x64
+node-v18.20.4-darwin-x64.tar.gz
+node-v18.20.5-darwin-x64.tar.gz
