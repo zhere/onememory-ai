@@ -47,8 +47,18 @@ export interface MemoryChunk {
   relevanceScore: number;
   chunkType: 'semantic' | 'paragraph' | 'fixed' | 'sliding';
   chunkIndex: number;
+  projectId: string;
+  sessionId?: string;
+  timestamp: Date;
+  tokenCount: number;
+  importance: number;
+  tags?: string[];
+  memoryType: 'conversation' | 'direct' | 'imported';
+  source: string;
+  version: number;
   metadata: Record<string, any>;
   createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface SegmentationConfig {
